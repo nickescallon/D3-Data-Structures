@@ -11,9 +11,9 @@ var len = 9;
 var count = 0;
 var size = 0;
 
-var svg = d3.select('body').append('svg')
+var svg = d3.select('.stackContainer').append('svg')
 	.attr('height', h)
-	.attr('width', w)
+	.attr('width', w);
 
 var lines = svg.selectAll('.lines').data(data);
 
