@@ -5,7 +5,8 @@ var y1 = 10;
 var x2 = 10;
 var y2 = 35;
 var xVar = 320;
-var data = d3.range(100);
+var maxItems = 18
+var data = d3.range(maxItems);
 var len = 9;
 var count = 0;
 var size = 0;
@@ -39,12 +40,14 @@ var pop = function(){
 }
 
 var push = function(){
-	lines.filter(function(d, i) { return i === count; }).transition()
-		.duration(800)
-		.attr({x1:160, y1:(90-size*5), x2:185, y2:(90-size*5)});
-	size++;
-	len = count;
-	count++;
+	if (count < maxItems){
+		lines.filter(function(d, i) { return i === count; }).transition()
+			.duration(800)
+			.attr({x1:160, y1:(90-size*5), x2:185, y2:(90-size*5)});
+		size++;
+		len = count;
+		count++;	
+	}
 }
 
 
