@@ -7,7 +7,7 @@ var y2 = 35;
 var xVar = 320;
 var maxItems = 18
 var data = d3.range(maxItems);
-var len = 9;
+var len;
 var count = 0;
 var size = 0;
 
@@ -34,7 +34,9 @@ var pop = function(){
 		lines.filter(function(d, i) { return i === len; }).transition()
 			.duration(800)
 			.attr({x1: x1+xVar, y1: y1, x2: x2+xVar, y2: y2});
-		size--;
+		if (size){
+			size--;
+		}
 		len--;
 	}	
 }
