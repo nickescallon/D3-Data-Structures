@@ -22,7 +22,7 @@ var drawStack = function(){
 	    .attr("y1", y1)
 	    .attr("x2", x2)
 	    .attr("y2", y2)
-	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 1});
+	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 2});
 
 	lines.exit()
 		.remove("line");
@@ -99,6 +99,7 @@ var drawStack = function(){
 					return true;
 				}
 			 })
+			.style({"stroke": "rgb(255, 137, 0)", "stroke-width": 2})
 			.transition()
 			.duration(800)
 			.attr({x1: x1+xVar, y1: y1, x2: x2+xVar, y2: y2});
@@ -139,7 +140,7 @@ var drawQueue = function(){
 	    .attr("y1", y1)
 	    .attr("x2", x2)
 	    .attr("y2", y2)
-	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 1});
+	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 2});
 
 	lines.exit()
 		.remove("line");
@@ -216,8 +217,9 @@ var drawQueue = function(){
 					return true;
 				}
 			 })
+			.style({"stroke": "rgb(255, 137, 0)", "stroke-width": 2})
 			.transition()
-			.duration(400)
+			.duration(800)
 			.attr({x1: x1+xVar, y1: y1, x2: x2+xVar, y2: y2});
 
 		lines.each(function(value, index){
