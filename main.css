@@ -2,7 +2,13 @@ body {
 	background-color: gray;
 }
 
-.stackContainer {
+.container {
 	background-color: white;
 	width: 350px;
+	margin-bottom: 15px;
+}
+
+g {
+	font-family: arial;
+	font-size: 11;
 }
