@@ -1,11 +1,11 @@
 var drawQueue = function(){	
-	var h = 100;
-	var w = 350;
+	var h = 150;
+	var w = 750;
 	var x1 = 10;
 	var y1 = 10;
-	var x2 = 35;
+	var x2 = 80;
 	var y2 = 10;
-	var xVar = 305;
+	var xVar = 200;
 	var maxItems = 45;
 	var data = d3.range(maxItems);
 	var count = 0;
@@ -22,7 +22,7 @@ var drawQueue = function(){
 	    .attr("y1", y1)
 	    .attr("x2", x2)
 	    .attr("y2", y2)
-	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 2});
+	    .style({"stroke": "rgb(6,120,155)", "stroke-width" : 10});
 
 	lines.exit()
 		.remove("line");
@@ -30,7 +30,7 @@ var drawQueue = function(){
 	/*---------------------------PUSH BUTTON--------------------------*/
 
 	var dequeueButton = svg.append('g')
-		.attr('transform', 'translate(220, 70)')
+		.attr('transform', 'translate('+(w-140)+','+(h-30)+')')
 		.attr('fill', 'white')
 		.attr('stroke-width', .5)
 		.attr('stroke', 'black');
@@ -53,7 +53,7 @@ var drawQueue = function(){
 	/*---------------------------POP BUTTON--------------------------*/
 
 	var enqueueButton = svg.append('g')
-		.attr('transform', 'translate(280, 70)')
+		.attr('transform', 'translate('+(w-70)+','+(h-30)+')')
 		.attr('fill', 'white')
 		.attr('stroke-width', .5)
 		.attr('stroke', 'black');
@@ -88,7 +88,7 @@ var drawQueue = function(){
 			 })
 			.transition()
 			.duration(800)
-			.attr({x1:245 - d3queue.size()*5, y1:30, x2:245 - d3queue.size()*5, y2:55});
+			.attr({x1:550 - d3queue.size()*20, y1:30, x2:550 - d3queue.size()*20, y2:100});
 		count++;
 	}
 
@@ -99,10 +99,10 @@ var drawQueue = function(){
 					return true;
 				}
 			 })
-			.style({"stroke": "rgb(255, 137, 0)", "stroke-width": 2})
+			.style({"stroke": "rgb(255, 137, 0)", "stroke-width": 10})
 			.transition()
 			.duration(800)
-			.attr({x1: x1+xVar, y1: y1, x2: x2+xVar, y2: y2});
+			.attr({x1: 670, y1: y1, x2: 740, y2: y2});
 
 		lines.each(function(value, index){
 			if (d3queue.storage[index]){
@@ -111,7 +111,7 @@ var drawQueue = function(){
 
 				d3.select(this).transition()
 				.duration(100)
-				.attr({'x1': x_1+5, 'x2': x_2+5});
+				.attr({'x1': x_1+20, 'x2': x_2+20});
 			}
 		});
 	}

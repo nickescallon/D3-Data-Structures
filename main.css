@@ -2,10 +2,24 @@ body {
 	background-color: gray;
 }
 
-.container {
+/*.container {
 	background-color: white;
 	width: 350px;
 	margin-bottom: 15px;
+}
+*/
+.container {
+	background-color: white;
+	width: 750px;
+	margin-bottom: 15px;
+}
+
+.stack {
+	width: 350px;
+}
+
+.tree {
+	width: 550px;
 }
 
 g {
